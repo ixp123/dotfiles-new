@@ -1,0 +1,18 @@
+#!/bin/bash
+function powermenu {
+    options="󰜺 Cancel\n󰐥 Shutdown\n󰜉 Restart\n󰤄 Sleep\n󰌾 Lock"
+    selected=$(echo -e $options | dmenu -m 0)
+    if [[ $selected = "󰐥 Shutdown" ]]; then
+        doas openrc-shutdown -p now
+    elif [[ $selected = "󰜉 Restart" ]]; then
+        doas openrc-shutdown -r now
+    elif [[ $selected = "󰤄 Sleep" ]]; then
+        doas loginctl suspend
+    elif [[ $selected = "󰌾 Lock" ]]; then
+        slock
+    elif [[ $selected = "󰜺 Cancel" ]]; then
+        return
+    fi
+}
+
+powermenu

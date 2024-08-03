@@ -1,0 +1,24 @@
+#!/bin/bash
+function appmenu {
+    options="󰈹 Librewolf\n󰘨 Matrix\n󰍡 Signal\n󰙯 Discord\n󰉋 Ranger\n󰎇 Nicotine\n󰓓 Steam\n󱧭 Torrents"
+    selected=$(echo -e $options | dmenu -m 0)
+    if [[ $selected = "󰈹 Librewolf" ]]; then
+        librewolf-bin
+    elif [[ $selected = "󰘨 Matrix" ]]; then
+        element-desktop
+    elif [[ $selected = "󰍡 Signal" ]]; then
+        signal-desktop
+    elif [[ $selected = "󰙯 Discord" ]]; then
+        discord
+    elif [[ $selected = "󰉋 Ranger" ]]; then
+        st -e ranger
+    elif [[ $selected = "󰎇 Nicotine" ]]; then
+	    nicotine
+    elif [[ $selected = "󰓓 Steam" ]]; then
+        steam
+    elif [[ $selected = "󱧭 Torrents" ]]; then
+	    qbittorrent
+    fi
+}
+
+appmenu

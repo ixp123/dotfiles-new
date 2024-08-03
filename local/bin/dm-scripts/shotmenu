@@ -1,0 +1,14 @@
+#!/bin/bash
+function powermenu {
+    options="󰜺 Cancel\n󱣴 Full\n󰒉 Selection"
+    selected=$(echo -e $options | dmenu -m 0)
+    if [[ $selected = "󱣴 Full" ]]; then
+        flameshot screen
+    elif [[ $selected = "󰒉 Selection" ]]; then
+        flameshot gui
+    elif [[ $selected = "󰜺 Cancel" ]]; then
+        return
+    fi
+}
+
+powermenu
