@@ -1,3 +1,0 @@
-/home/beau/.local/share/dwm/config.h
-/home/beau/.local/share/st/config.h
-/home/beau/.xinitrc
