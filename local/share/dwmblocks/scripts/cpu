@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+cpu=$(top -bn1 | grep load | awk '{printf "%.1f%%", $(NF-2)}')
+
+echo -e "$cpu"
+

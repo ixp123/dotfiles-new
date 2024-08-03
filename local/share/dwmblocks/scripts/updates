@@ -1,0 +1,5 @@
+#!/bin/sh
+
+update=$(PRINT_COUNT_ALWAYS=never eix -uc --format="<name>\n" | wc -l)
+
+echo "$update"

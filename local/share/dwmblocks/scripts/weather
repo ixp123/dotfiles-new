@@ -1,0 +1,4 @@
+#!/bin/sh
+weather=$(curl -s wttr.in/Jacksonville?format=%t)
+
+echo -e "$weather"
